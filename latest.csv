@@ -1,0 +1,178 @@
+Industry,current_month,monthly_change,annual_change,monthly_percent_change,annual_percent_change
+Total nonfarm,149893,155,2443,0.1,1.66
+Total private,127515,161,2395,0.13,1.91
+Goods-producing,20869,29,623,0.14,3.08
+Mining and logging,750,-3,53,-0.4,7.6
+Logging,46.4,-0.6,-2.9,-1.28,-5.88
+Mining,703.8,-2,56.5,-0.28,8.73
+Oil and gas extraction,153.4,0.4,7.4,0.26,5.07
+"Mining, except oil and gas",190.7,0,4.5,0,2.42
+Coal mining,53.2,0.4,1.1,0.76,2.11
+Metal ore mining,38.7,-0.2,0.2,-0.51,0.52
+Nonmetallic mineral mining and quarrying,98.7,-0.2,3.1,-0.2,3.24
+Support activities for mining,359.7,-2.4,44.6,-0.66,14.15
+Construction,7312,5,282,0.07,4.01
+Construction of buildings,1626.5,6.3,71.4,0.39,4.59
+Residential building,812.9,7.1,54.8,0.88,7.23
+Nonresidential building,813.6,-0.8,16.6,-0.1,2.08
+Heavy and civil engineering construction,1029,0.2,44.5,0.02,4.52
+Specialty trade contractors,4656.1,-2.2,166.1,-0.05,3.7
+Residential specialty trade contractors,2045.7,0.8,73.1,0.04,3.71
+Nonresidential specialty trade contractors,2610.4,-3,93,-0.11,3.69
+Manufacturing,12807,27,288,0.21,2.3
+Durable goods,8016,15,224,0.19,2.87
+Wood products,408.8,0.7,13.2,0.17,3.34
+Nonmetallic mineral products,422.8,1.1,9.8,0.26,2.37
+Primary metals,385.3,2.8,10.1,0.73,2.69
+Fabricated metal products,1493.3,-1.5,43.8,-0.1,3.02
+Machinery,1136,1.9,43.1,0.17,3.94
+Computer and electronic products,1074.3,3.2,21.8,0.3,2.07
+Computer and peripheral equipment,171.8,0.8,6.8,0.47,4.12
+Communications equipment,85.8,0.2,-0.8,0.23,-0.92
+Semiconductors and electronic components,371,1.4,5.7,0.38,1.56
+Electronic instruments,412.7,0.6,10,0.15,2.48
+Miscellaneous computer and electronic products,33,0.2,0.1,0.61,0.3
+Electrical equipment and appliances,410.1,1.4,15.9,0.34,4.03
+Transportation equipment(1),1691.5,5.3,55.9,0.31,3.42
+Motor vehicles and parts(2),968.2,-0.8,14.4,-0.08,1.51
+Furniture and related products,392,0.8,0.3,0.2,0.08
+Miscellaneous durable goods manufacturing,601.6,-0.9,9.4,-0.15,1.59
+Nondurable goods,4791,12,64,0.25,1.35
+Food manufacturing,1651.7,4.9,35.2,0.3,2.18
+Textile mills,111.8,0.6,0.1,0.54,0.09
+Textile product mills,110.2,-0.2,-2.4,-0.18,-2.13
+Apparel,110.6,-0.9,-5.3,-0.81,-4.57
+Paper and paper products,379.4,0.7,9.2,0.18,2.49
+Printing and related support activities,430.7,-0.9,-7.2,-0.21,-1.64
+Petroleum and coal products,114.5,-1.5,-0.7,-1.29,-0.61
+Chemicals,845,5.8,17.7,0.69,2.14
+Plastics and rubber products,733.7,2.8,9.6,0.38,1.33
+Miscellaneous nondurable goods manufacturing,303.8,0.8,8.2,0.26,2.77
+Private service-providing,106646,132,1772,0.12,1.69
+"Trade, transportation, and utilities",27909,53,307,0.19,1.11
+Wholesale trade,6026.3,9.5,93,0.16,1.57
+Durable goods,3047.4,6,59.5,0.2,1.99
+Nondurable goods,2056.7,2.2,4.4,0.11,0.21
+Electronic markets and agents and brokers,922.2,1.3,29.1,0.14,3.26
+Retail trade,15910.7,18.2,23.7,0.11,0.15
+Motor vehicle and parts dealers,2038.5,-2.8,20,-0.14,0.99
+Automobile dealers,1309.4,-1.1,7.8,-0.08,0.6
+Other motor vehicle dealers,157.2,-0.7,1.1,-0.44,0.7
+"Auto parts, accessories, and tire stores",571.9,-1,11.1,-0.17,1.98
+Furniture and home furnishings stores,484.9,-1,5.1,-0.21,1.06
+Electronics and appliance stores,475.6,-10.9,-14.6,-2.24,-2.98
+Building material and garden supply stores,1302.2,-0.6,8.3,-0.05,0.64
+Food and beverage stores,3106.5,2.9,9,0.09,0.29
+Health and personal care stores,1061.5,2.2,-4.5,0.21,-0.42
+Gasoline stations,940.9,2.4,6,0.26,0.64
+Clothing and clothing accessories stores,1337.9,-14.1,-15.5,-1.04,-1.15
+"Sporting goods, hobby, book, and music stores",543.2,-11.1,-64.7,-2,-10.64
+General merchandise stores,3187.4,39.3,38.4,1.25,1.22
+Department stores,1193.6,11.6,7.4,0.98,0.62
+"General merchandise stores, including warehouse clubs and supercenters",1993.8,27.7,31,1.41,1.58
+Miscellaneous store retailers,830.8,9.8,11.1,1.19,1.35
+Nonstore retailers,601.3,2.1,25.1,0.35,4.36
+Transportation and warehousing,5419.3,25.4,191.8,0.47,3.67
+Air transportation,504.8,-0.8,5.5,-0.16,1.1
+Rail transportation,215,0,2.6,0,1.22
+Water transportation,65.2,-0.3,-0.2,-0.46,-0.31
+Truck transportation,1493,4.5,36.3,0.3,2.49
+Transit and ground passenger transportation,494.1,0.2,-0.6,0.04,-0.12
+Pipeline transportation,46.4,-0.5,-1.6,-1.07,-3.33
+Scenic and sightseeing transportation,35.1,1,-0.1,2.93,-0.28
+Support activities for transportation,722.8,5.2,25.9,0.72,3.72
+Couriers and messengers,779.4,9.9,74.1,1.29,10.51
+Warehousing and storage,1063.5,6.2,49.9,0.59,4.92
+Utilities,552.8,0.2,-1.5,0.04,-0.27
+Information,2759,-8,-21,-0.29,-0.76
+"Publishing industries, except Internet",711.7,-1,-7,-0.14,-0.97
+Motion picture and sound recording industries,405.4,-9.7,-12.7,-2.34,-3.04
+"Broadcasting, except Internet",262.6,0.5,-1.1,0.19,-0.42
+Telecommunications,748.1,-1.1,-26.6,-0.15,-3.43
+"Data processing, hosting and related services",329.1,1.1,8.5,0.34,2.65
+Other information services,302.2,2.7,17.9,0.9,6.3
+Financial activities,8622,6,119,0.07,1.4
+Finance and insurance,6342.4,3.8,56.1,0.06,0.89
+Monetary authorities - central bank,19.1,-0.1,0.3,-0.52,1.6
+Credit intermediation and related  activities,2658.9,-6.3,3.5,-0.24,0.13
+Depository credit intermediation(1),1719.3,-0.7,2.8,-0.04,0.16
+Commercial banking,1318.1,-0.6,-5.1,-0.05,-0.39
+Nondepository credit intermediation,625.1,-4.2,-0.8,-0.67,-0.13
+Activities related to credit intermediation,314.5,-1.4,1.5,-0.44,0.48
+"Securities, commodity contracts, investments, and funds and trusts",976.6,6.3,27.6,0.65,2.91
+Insurance carriers and related activities,2687.8,3.9,24.7,0.15,0.93
+Real estate and rental and leasing,2279.1,2.2,62.5,0.1,2.82
+Real estate,1645.6,-0.2,33.3,-0.01,2.07
+Rental and leasing services,608.6,2.7,28.5,0.45,4.91
+Lessors of nonfinancial intangible assets,24.9,-0.3,0.7,-1.19,2.89
+Professional and business services,21207,32,561,0.15,2.72
+Professional and technical services,9339.1,17.7,270.9,0.19,2.99
+Legal services,1135.7,-2.4,-0.1,-0.21,-0.01
+Accounting and bookkeeping services,1015.6,-1.4,28.3,-0.14,2.87
+Architectural and engineering services,1499.6,5.7,48.4,0.38,3.34
+Specialized design services,140,1,0.8,0.72,0.57
+Computer systems design and related services,2139.4,7.6,79,0.36,3.83
+Management and technical consulting services,1473.8,3.6,53.9,0.24,3.8
+Scientific research and development services,690.8,2.2,28,0.32,4.22
+Advertising and related services,496.6,0.6,7.8,0.12,1.6
+Other professional and technical services,747.6,0.9,24.9,0.12,3.45
+Management of companies and enterprises,2341.3,0.8,36.6,0.03,1.59
+Administrative and waste services,9527,14.2,254.2,0.15,2.74
+Administrative and support services,9090.5,13.6,234.3,0.15,2.65
+Office administrative services,529,0.1,11.5,0.02,2.22
+Facilities support services,157.3,-0.7,3.1,-0.44,2.01
+Employment services(1),3777.9,7.9,106.8,0.21,2.91
+Temporary help services,3084.9,8.3,85.8,0.27,2.86
+Business support services,909.8,-0.1,1.9,-0.01,0.21
+Travel arrangement and reservation services,215.5,-1.7,-0.4,-0.78,-0.19
+Investigation and security services,946,1.1,23.5,0.12,2.55
+Services to buildings and dwellings,2209.6,4.4,73.2,0.2,3.43
+Other support services,345.4,2.5,14.8,0.73,4.48
+Waste management and remediation services,436.5,0.6,19.9,0.14,4.78
+Education and health services,23823,34,473,0.14,2.03
+Educational services,3730.3,-6.4,33.4,-0.17,0.9
+Health care and social assistance,20092.4,40.1,438.9,0.2,2.23
+Health care(3),16163.3,32.1,328.3,0.2,2.07
+Ambulatory health care services,7563,19.2,190.3,0.25,2.58
+Offices of physicians,2658,5.5,47.7,0.21,1.83
+Offices of dentists,952.2,0.3,15.7,0.03,1.68
+Offices of other health practitioners,943.3,2.4,41.5,0.26,4.6
+Outpatient care centers,949.9,5.8,36.7,0.61,4.02
+Medical and diagnostic laboratories,282.5,-0.9,9.9,-0.32,3.63
+Home health care services,1474.2,4,45.2,0.27,3.16
+Other ambulatory health care services,302.8,2,-6.4,0.66,-2.07
+Hospitals,5228.2,12.7,118,0.24,2.31
+Nursing and residential care facilities,3372.1,0.2,20,0.01,0.6
+Nursing care facilities,1614.9,0.9,-7,0.06,-0.43
+Residential mental health facilities,636.3,-0.9,3.7,-0.14,0.58
+Community care facilities for the elderly,946.6,-0.1,19,-0.01,2.05
+Other residential care facilities,174.3,0.4,4.4,0.23,2.59
+Social assistance,3929.1,8,110.6,0.2,2.9
+Individual and family services,2466.8,8.3,100.3,0.34,4.24
+Emergency and other relief services,176.9,0.7,6.6,0.4,3.88
+Vocational rehabilitation services,347.6,-0.7,3.7,-0.2,1.08
+Child day care services,937.8,-0.4,0.1,-0.04,0.01
+Leisure and hospitality,16444,15,268,0.09,1.66
+"Arts, entertainment, and recreation",2393.1,1.1,49.4,0.05,2.11
+Performing arts and spectator sports,513.8,-4.5,19.8,-0.87,4.01
+"Museums, historical sites, and similar institutions",177.8,1.7,8,0.97,4.71
+"Amusements, gambling, and recreation",1701.5,3.9,21.6,0.23,1.29
+Accommodation and food services,14051.2,14,218.6,0.1,1.58
+Accommodation,2028.7,-7.2,15.4,-0.35,0.76
+Food services and drinking places,12022.5,21.2,203.2,0.18,1.72
+Other services,5882,0,65,0,1.12
+Repair and maintenance,1323.8,-2.1,6.9,-0.16,0.52
+Personal and laundry services,1538.4,-0.5,32.8,-0.03,2.18
+Membership associations and organizations,3020,2.5,25.3,0.08,0.84
+Government,22378,-6,48,-0.03,0.21
+Federal,2804,3,1,0.11,0.04
+"Federal, except U.S. Postal Service",2191.8,-2.1,5,-0.1,0.23
+U.S. Postal Service,612.6,6,-3.6,0.99,-0.58
+State government,5115,-13,-14,-0.25,-0.27
+State government education,2455.3,-6.2,-6.9,-0.25,-0.28
+"State government, excluding education",2659.7,-6.3,-7.4,-0.24,-0.28
+Local government,14459,4,61,0.03,0.42
+Local government education,7956.4,-2,22.4,-0.03,0.28
+"Local government, excluding education",6502.4,5.6,38,0.09,0.59
+"Footnotes(1) Includes other industries, not shown separately.(2) Includes motor vehicles, motor vehicle bodies and trailers, and motor vehicle parts.(3) Includes ambulatory health care services, hospitals, and nursing and residential care facilities.(p) Preliminary",NA,NA,NA,NA,NA
+NOTE: Data have been revised to reflect March 2017 benchmark levels and updated seasonal adjustment factors.,NA,NA,NA,NA,NA

@@ -1,0 +1,219 @@
+---
+title: "Jobs Day"
+author: "The Penny Hoarder Data Desk"
+output:
+  prettydoc::html_pretty:
+    theme: tactile
+    highlight: tango
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r loading and cleaning data, warning=F, message=F, echo=F}
+
+library(dplyr)
+library(ggplot2)
+library(ggthemes)
+library(rvest)
+library(readr)
+library(blscrapeR)
+library(scales)
+
+
+# Suppress scientific notation.
+options(scipen=999, digits=2)
+
+# Grab the table's URL from the BLS
+url <- "https://www.bls.gov/news.release/empsit.t17.htm"
+industries <- url %>%
+  read_html() %>%
+  html_nodes(xpath='//*[@id="ces_table1"]') %>%
+  html_table(fill=TRUE)
+
+#Turn the JSON data into a dataframe.
+industries <- industries[[1]] 
+
+# Clean up the dumb columns, drop NAs, and rename the columns.
+names(industries) <- industries[1,]
+industries <- industries[-c(1,195,196),] 
+industries <- industries[,-c(2:5)] %>% 
+  filter(`Dec.2017` != "") %>% 
+  rename(month_last_year=`Dec.2017`,
+         two_months_ago=`Oct.2018`,
+         last_month=`Nov.2018(p)`,
+         current_month=`Dec.2018(p)`,
+         monthly_change=`Change from: Nov.2018 - Dec.2018(p)`)
+
+# Make our data numeric.
+industries$month_last_yearn <- as.numeric(gsub(",", "", industries$month_last_year))
+industries$two_months_agon <- as.numeric(gsub(",", "", industries$two_months_ago))
+industries$last_monthn <- as.numeric(gsub(",", "", industries$last_month))
+industries$current_monthn <- as.numeric(gsub(",", "", industries$current_month))
+industries$monthly_changen <- as.numeric(gsub(",", "", industries$monthly_change))
+
+# Create new variables that show percentage change.
+industries <- industries %>% 
+  select(Industry, month_last_yearn, two_months_agon, last_monthn,
+         last_monthn, current_monthn, monthly_changen) %>% 
+  rename(month_last_year=month_last_yearn,
+         two_months_ago=two_months_agon,
+         last_month=last_monthn,
+         current_month=current_monthn,
+         monthly_change=monthly_changen) %>% 
+  mutate(monthly_percent_change=(monthly_change/last_month)*100) %>% 
+  mutate(annual_change=current_month-month_last_year) %>% 
+  mutate(annual_percent_change=(annual_change/month_last_year)*100) %>%
+  select(Industry, current_month, monthly_change, annual_change, monthly_percent_change, annual_percent_change) %>% 
+  mutate(monthly_percent_change=round(monthly_percent_change, 2)) %>% 
+  mutate(annual_change=round(annual_change, 2)) %>% 
+  mutate(annual_percent_change=round(annual_percent_change,2))
+
+
+### ANNUAL WAGES 
+
+library(dplyr)
+library(ggplot2)
+library(ggthemes)
+library(rvest)
+library(readr)
+library(scales)
+
+url <- "https://www.bls.gov/news.release/empsit.t19.htm"
+wage <- url %>%
+  read_html() %>%
+  html_nodes(xpath='//*[@id="ces_table3"]') %>%
+  html_table(fill=TRUE)
+
+wage <- data.frame(wage)
+
+wage <- wage[-c(1, 21, 22),] 
+
+wage <- wage[,-c(6:9)] %>% 
+  rename(month_last_year=`Average.hourly.earnings`,
+         two_months_ago=`Average.hourly.earnings.1`,
+         last_month=`Average.hourly.earnings.2`,
+         current_month=`Average.hourly.earnings.3`)
+
+total <- wage[1,]
+
+wage <- wage[-1,]
+
+total$month_last_year <- substring(total$month_last_year, 2)
+total$two_months_ago <- substring(total$two_months_ago, 2)
+total$last_month <- substring(total$last_month, 2)
+total$current_month <- substring(total$current_month, 2)
+
+wage_fixed <- rbind(total, wage)
+
+wage_fixed$month_last_yearn <- as.numeric(gsub(",", "", wage_fixed$month_last_year))
+wage_fixed$two_months_agon <- as.numeric(gsub(",", "", wage_fixed$two_months_ago))
+wage_fixed$last_monthn <- as.numeric(gsub(",", "", wage_fixed$last_month))
+wage_fixed$current_monthn <- as.numeric(gsub(",", "", wage_fixed$current_month))
+
+wage_fixed <- wage_fixed %>% 
+  select(Industry, month_last_yearn, two_months_agon, last_monthn,
+         last_monthn, current_monthn) %>% 
+  rename(month_last_year=month_last_yearn,
+         two_months_ago=two_months_agon,
+         last_month=last_monthn,
+         current_month=current_monthn) %>% 
+  mutate(monthly_change = current_month - last_month) %>% 
+  mutate(monthly_percent_change=((current_month - last_month)/last_month)*100) %>% 
+  mutate(annual_change=current_month-month_last_year) %>% 
+  mutate(annual_percent_change=(annual_change/month_last_year)*100) %>%
+  mutate(monthly_change=round(monthly_change, 2)) %>% 
+  mutate(monthly_percent_change=round(monthly_percent_change, 2)) %>% 
+  mutate(annual_change=round(annual_change, 2)) %>% 
+  mutate(annual_percent_change=round(annual_percent_change, 2)) %>% 
+  select(Industry, current_month, monthly_change, annual_change, monthly_percent_change, annual_percent_change) 
+
+### Unemployment numbers
+
+unemployment_rate <- bls_api(("LNS14000000"), startyear= 2009, endyear = 2018, Sys.getenv("11f3c9f7ca4a445299debc19720f0381")) %>% 
+  dateCast() %>%
+  arrange(date) %>% 
+  mutate(monthly_change=-1*(lag(value)-value)) %>% 
+  mutate(annual_change=-1*(lag(value, 12)-value))  %>% 
+  mutate(monthly_percent_change=-1*((lag(value)-value)/lag(value))) %>% 
+  mutate(annual_percent_change=-1*((lag(value, 12)-value)/lag(value, 12)))
+
+
+unemployment_rate_latest <- tail(unemployment_rate$value, 1)
+unemployment_rate_change <- tail(unemployment_rate$monthly_change, 1)
+unemployment_rate_annual_change <- tail(unemployment_rate$annual_change, 1)
+
+### Marginally attached unemployment numbers
+
+unemployment_six <- bls_api(("LNS13327709"), startyear= 2009, endyear = 2018, Sys.getenv("11f3c9f7ca4a445299debc19720f0381")) %>% 
+  dateCast() %>%
+  arrange(date) %>% 
+  mutate(monthly_change=-1*(lag(value)-value)) %>% 
+  mutate(annual_change=-1*(lag(value, 12)-value))  %>% 
+  mutate(monthly_percent_change=-1*((lag(value)-value)/lag(value))) %>% 
+  mutate(annual_percent_change=-1*((lag(value, 12)-value)/lag(value, 12)))
+
+
+unemployment_six_latest <- tail(unemployment_six$value, 1)
+unemployment_six_change <- tail(unemployment_six$monthly_change, 1)
+unemployment_six_annual_change <- tail(unemployment_six$annual_change, 1)
+
+```
+This is the latest report on job growth by industry for the month of December — the last one of 2018. The unemployment rate for this month is **`r unemployment_rate_latest`%**. That's a **`r unemployment_rate_change`** percentage point change from the previous month, and a **`r unemployment_rate_annual_change`** percentage point change from the same month last year.
+
+```{r plot_of_unemployment, fig.align="center", warning=F, echo=F}
+
+### Plot of unemployment rate.
+
+ggplot(unemployment_rate, aes(x=date, y=value)) +
+  geom_line() +
+  labs(aes(x="Year", y="Unemployment Rate"),
+           title="Unemployment Rate Continues Decline",
+           subtitle="This is the traditional measure of unemployment in the U.S..",
+           caption="Source: U.S. Labor Department") +
+  scale_y_continuous(limits = c(0, 10)) +
+  theme_minimal()
+
+```
+
+But, when we look at alternative measures of unemployment, you can see this month's U-6 rate is at **`r unemployment_six_latest`%**. That's a **`r unemployment_six_change`** percentage point change from the previous month, and a **`r unemployment_six_annual_change`** percentage point change from the same month last year.
+
+(U-6 measures the number of folks who are on contract and expecting it to end, those who are discouraged and those who are working part-time because they can't find a full-time job.)
+
+The monthly and annual change in employment is reflected in percent change.
+
+```{r plot_of_unemployment_u, fig.align="center", warning=F, echo=F}
+
+### Plot of unemployment rate.
+
+ggplot(unemployment_six, aes(x=date, y=value)) +
+  geom_line() +
+  labs(aes(x="Year", y="U-6 Unemployment Rate"),
+           title="U-6 Unemployment Rate Continues Decline",
+           subtitle="This is an alternative measure of unemployment that includes discouraged workers.",
+           caption="Source: U.S. Labor Department") +
+  scale_y_continuous(limits = c(0, 18)) +
+  theme_minimal()
+
+```
+
+Now, let's take a look at the employment change by industry. The monthly and annual change is in thousands.
+
+```{r industry_table, warning=F, echo=F}
+library(DT)
+datatable(industries, class = 'cell-border stripe',
+          colnames = c("Industry", "Current Month", "Monthly Change",
+                       "Annual Change", "Monthly % Change", "Annual % Change"),
+options = list(pageLength = 5, lengthMenu = c(5, 10, 15, 20)))
+```
+
+Now let's look at some trends in real wages.
+
+```{r wage_table, warning=F, echo=F}
+library(DT)
+datatable(wage_fixed, class = 'cell-border stripe',
+          colnames = c("Industry", "Current Month", "Monthly Change",
+                       "Annual Change", "Monthly % Change", "Annual % Change"), options = list(  pageLength = 5, lengthMenu = c(5, 10, 15, 20)))
+```
+
+
